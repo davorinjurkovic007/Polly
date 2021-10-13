@@ -13,7 +13,8 @@ namespace PollyWrappingExampleReuse
         public IAsyncPolicy<HttpResponseMessage> HttpRetryPolicy { get; set; }
         public IAsyncPolicy<HttpResponseMessage> HttpRequestFallbackPolicy { get; set; }
 
-        public PolicyWrap<HttpResponseMessage> TimeoutRetryAndFallbackWrap { get; set; }
+        // For unit testing change PolicyWrap to IPolicyWrap
+        public IPolicyWrap<HttpResponseMessage> TimeoutRetryAndFallbackWrap { get; set; }
 
         readonly int _cachedResult = 0;
 

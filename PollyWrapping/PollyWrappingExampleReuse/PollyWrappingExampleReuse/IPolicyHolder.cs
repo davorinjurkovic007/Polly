@@ -10,6 +10,6 @@ namespace PollyWrappingExampleReuse
         IAsyncPolicy<HttpResponseMessage> HttpRetryPolicy { get; set; }
         IAsyncPolicy<HttpResponseMessage> HttpRequestFallbackPolicy { get; set; }
 
-        PolicyWrap<HttpResponseMessage> TimeoutRetryAndFallbackWrap { get; set; }
+        IPolicyWrap<HttpResponseMessage> TimeoutRetryAndFallbackWrap { get; set; }
     }
 }
