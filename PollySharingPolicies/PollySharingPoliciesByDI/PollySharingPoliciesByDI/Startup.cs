@@ -17,6 +17,8 @@ namespace PollySharingPoliciesByDI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Because policies are thread safe, you can do this with a Singleton, but you need to careful with any delegates that you reference.
+            // It's on you to ensure that they are thread safe. 
             services.AddSingleton<PolicyHolder>(new PolicyHolder());
             services.AddMvc();
         }
